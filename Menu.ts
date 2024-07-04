@@ -1,6 +1,8 @@
 import readlinesync = require("readline-sync");
 import { colors } from "./src/util/Colors";
 import { Conta } from "./src/model/Conta";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
@@ -8,36 +10,58 @@ export function main() {
 
     //Novas instancias da classe conta (Objetos da classe Conta)
 
-    const c1: Conta = new Conta(1, 1234, 1, 'Julia Castro', 800000.00);
-    const c2: Conta = new Conta(2, 1234, 2, 'Marcella Sanches', 600000.00);
+    // const c1: Conta = new Conta(1, 1234, 1, 'Julia Castro', 800000.00);
+    // const c2: Conta = new Conta(2, 1234, 2, 'Marcella Sanches', 600000.00);
     
-    // visualizando os dados da conta c1
-    c1.visualizar();
-    // visualizando os dados da conta c2
-     c2.visualizar();
+    // // visualizando os dados da conta c1
+    // c1.visualizar();
+    // // visualizando os dados da conta c2
+    //  c2.visualizar();
 
-    // mostra algo especifico (como só o saldo)
-    console.log(`\nO saldo da conta 01 é: ${c1.saldo}`)  
-    // Alterando o saldo da conta c2
-    c2.saldo = 900000.00;
-    // mostra a nova alteração da c2 na tela
-    console.log(`\nO saldo da conta 01 é: ${c2.saldo}`)
+    // // mostra algo especifico (como só o saldo)
+    // console.log(`\nO saldo da conta 01 é: ${c1.saldo}`)  
+    // // Alterando o saldo da conta c2
+    // c2.saldo = 900000.00;
+    // // mostra a nova alteração da c2 na tela
+    // console.log(`\nO saldo da conta 01 é: ${c2.saldo}`)
 
-    // Saque nas contas
-    console.log(`\nSacar 100 reias da conta c2: ${c1.sacar(100)}`) // true
-    c1.visualizar();
+    // // Saque nas contas
+    // console.log(`\nSacar 100 reias da conta c2: ${c1.sacar(100)}`) // true
+    // c1.visualizar();
 
-    console.log(`\nSacar 100000.00 reias da conta c2: ${c2.sacar(1000000)}`) // false
-    c2.visualizar();
+    // console.log(`\nSacar 100000.00 reias da conta c2: ${c2.sacar(1000000)}`) // false
+    // c2.visualizar();
 
-        // Depositar nas contas
-    console.log(`\nDepositar 200000.00 reias da conta c2:`)
-    c1.depositar(200000);
-    c1.visualizar();
+    //     // Depositar nas contas
+    // console.log(`\nDepositar 200000.00 reias da conta c2:`)
+    // c1.depositar(200000);
+    // c1.visualizar();
 
-    console.log(`\nDepositar 300000.25 reias da conta c2:`)
-    c2.depositar(300000.25);
-    c2.visualizar();
+    // console.log(`\nDepositar 300000.25 reias da conta c2:`)
+    // c2.depositar(300000.25);
+    // c2.visualizar();
+
+
+    //Novas instancias da classe conta (Objetos da classe Conta)
+const cc1: ContaCorrente = new ContaCorrente(3, 1234, 1, 'Amanda Magro', 1000000.00, 100000.00);
+const cc2: ContaCorrente = new ContaCorrente(4, 1234, 2, 'Joao da Silva', 600000.00, 100.00);
+
+console.log(`\nSaque de R$ 25.000,00 na Conta cc1: ${cc1.sacar(25000)}`)
+console.log(`\nSaque de R$ 1.500,00 na Conta cc2: ${cc2.sacar(15000)}`)
+
+console.log(`\nDepositar R$ 3.000,99 da Conta cc2: `)
+cc2.depositar(3000.99)
+cc2.visualizar();
+
+cc1.visualizar();
+cc2.visualizar();    
+
+const cp1: ContaPoupanca = new ContaPoupanca(3, 1234, 1, 'Amanda Magro', 1000000.00, 4);
+cp1.visualizar();
+cp1.sacar(200);
+cp1.visualizar();
+cp1.depositar(1000);
+cp1.visualizar();
 
 
     while (true) {
