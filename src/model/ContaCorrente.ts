@@ -2,6 +2,7 @@ import { Conta } from "./Conta";
 
 export class ContaCorrente extends Conta{
 
+
     private _limite: number;
 
 	constructor(numero: number, agencia: number, tipo: number, titular: string, saldo: number, limite: number) {

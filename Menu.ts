@@ -42,6 +42,7 @@ export function main() {
     // c2.visualizar();
 
 
+
     //Novas instancias da classe conta (Objetos da classe Conta)
 const cc1: ContaCorrente = new ContaCorrente(3, 1234, 1, 'Amanda Magro', 1000000.00, 100000.00);
 const cc2: ContaCorrente = new ContaCorrente(4, 1234, 2, 'Joao da Silva', 600000.00, 100.00);
