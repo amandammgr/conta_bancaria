@@ -1,8 +1,8 @@
 import { Conta } from "../model/Conta";
 
-export interface ContaRepository{
+export interface ContaRepository {
 
-// Métodos do CRUD
+    // Métodos do CRUD
 
     procurarPorNumero(numero: number): void;
     listarTodas(): void;
@@ -10,7 +10,7 @@ export interface ContaRepository{
     atualizar(conta: Conta): void;
     deletar(numero: number): void;
 
-// Métodos Bancários
+    // Métodos Bancários
 
     sacar(numero: number, valor: number): void;
     depositar(numero: number, valor: number): void;
